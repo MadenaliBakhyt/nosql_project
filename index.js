@@ -1,8 +1,13 @@
 const express=require("express")
 const app=express()
 const mongoose=require("mongoose")
+const dotenv=require("dotenv")
 
-mongoose.connect("mongodb+srv://Bakhyt:<password>@cluster0.zpzgnug.mongodb.net/test")
+dotenv.config()
+
+mongoose.set("strictQuery", false)
+
+mongoose.connect(process.env.MONGO_URL)
     .then(()=>console.log("Good"))
     .catch((err)=>console.log(err))
 
