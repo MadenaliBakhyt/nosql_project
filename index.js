@@ -4,6 +4,7 @@ const mongoose=require("mongoose")
 const dotenv=require("dotenv")
 
 const UserRoute=require("./routes/user")
+const ProductRoute=require("./routes/product")
 
 dotenv.config()
 
@@ -15,6 +16,8 @@ mongoose.connect(process.env.MONGO_URL)
 
 app.use(express.json())
 app.use("/api/user",UserRoute)
+
+app.use("/api/product",ProductRoute)
 
 app.listen(5000,()=>{
     console.log("Server is running")
