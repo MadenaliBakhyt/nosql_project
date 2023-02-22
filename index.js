@@ -6,6 +6,8 @@ const dotenv=require("dotenv")
 const UserRoute=require("./routes/user")
 const ProductRoute=require("./routes/product")
 const AuthRoute=require("./routes/auth")
+const CartRoute=require("./routes/cart")
+const OrderRoute=require("./routes/order")
 
 dotenv.config()
 
@@ -21,6 +23,10 @@ app.use("/api/auth",AuthRoute)
 app.use("/api/user",UserRoute)
 
 app.use("/api/product",ProductRoute)
+
+app.use("/api/cart",CartRoute)
+
+app.use("/api/order",OrderRoute)
 
 
 app.listen(5000,()=>{
