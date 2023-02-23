@@ -6,8 +6,9 @@ const ProductSchema=new mongoose.Schema({
         price:{type:Number,required:true},
         desc:{type:String,required:true},
         img:{type:String,required:true},
-        size:{type:String},
-        color:{type:String},
+        size:{type:Array},
+        color:{type:Array},
+        inStock:{type:Boolean,default:true}
 
     },{timestamps:true}
 )
